@@ -58,11 +58,11 @@ Hexo 是 Node.js 写的，所以需要先安装好 Node.js
 ```
 sudo git clone https://github.com/nodejs/node.git
 ```
-2.修改目录权限
+ 2.修改目录权限
 ```
  sudo chmod -R 755 node
 ```
-3.使用 ./configure 创建编译文件，按照：
+ 3.使用 ./configure 创建编译文件，按照：
 ```
  cd node
  sudo chmod +x configure
@@ -70,7 +70,7 @@ sudo git clone https://github.com/nodejs/node.git
  sudo make
  sudo make install
 ```
-4.查看Node版本
+ 4.查看Node版本
 ```
  node --version
 ```
@@ -119,9 +119,81 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 * github账户的注册和配置  
 1.Github注册（如果已经拥有账号，请跳过此步~）  
 打开https://github.com/ ，在下图的框中，分别输入自己的用户名，邮箱，密码。  
+![](搭建博客_sign_up_for_GitHub.jpg)  
+然后前往注册的邮箱，点开github给你发送的邮件，进行认证。  
+2.创建代码库
+到主页点击new repository：   
+![](搭建博客_new_repository.png)  
+在Repository name中输入你要创建的名字，注意**要使用你自己的名字+.github.io**,例如我的名字为：shenweikun,则Repository name中输入：  
+![](搭建博客_create_repository.png)   
+然后，github会自动为你创建github pages，以后就可以使用yourname.gitgub.io在浏览器中访问你的博客了。  
+3.为了将你本地git仓库与github关联，还需要配置SSH  
+将前面**git安装与配置**步骤生成的**id_rsa.pub**复制到github上。具体步骤如下：  
+ a. cat ~/.ssh/id_rsa.pub  
+ b.复制id_rsa.pub中的内容
+ c.黏贴到SSH key中，然后点击 add SSH key
+ 
+ ![](搭建博客_SSH.jpg)
+ 
 
-{% asset_img 搭建博客_sign_up_for_GitHub.jpg  %}
+* hexo配置和部署  
+1.配置Deployment  
+在hexo（myblog）目录下的_config.yml文件中，找到Deployment，然后按照如下修改：
+```
+//记得要将名字替换成你建立git仓库时的yourname
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:shenweikun/shenweikun.github.io.git
+  branch: master
+```
+ 2.执行
+```
+hexo g  //生成HTML
+hexo d  //部署到博客
+```
+ 3.打开你的博客yourname.github.io,就可以看到你的博客主页了：
 
-**未完，待更新。。。**
+![](搭建博客_默认主页.png)
+ 
+ 
 ***
 ### 如何发布文章？
+* 本地生成markdown文件  
+进入到我们的hexo根目录，执行命令：
+```
+hexo new 'my-new-blog'
+```
+hexo会帮我们在_posts下生成相关md文件：
+source/_posts/my-new-blog.md
+
+
+* 编辑markdown文件  
+我们只需要打开my-new-blog.md编辑博客内容了。  
+你也可以直接自己新建md文件，用这个命令的好处是帮我们自动生成了时间。一般完整格式如下：
+```
+title: postName #文章页面上的显示名称，一般是中文
+date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改
+categories: 默认分类 #分类
+tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格
+description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面
+后面写正文
+```
+
+
+* 部署到github pages博客上  
+执行：
+```
+hexo g  //生成HTML
+hexo d  //部署到博客
+```
+然后打开你的博客就能看到你的文章了 
+
+***
+写得比较简单，很多细节都没有提到，要回家过年了，暂时先这样吧，后面有时间再做完善了。
+例如：
+怎么把hexo的相关信息修改为自己？  
+怎么更换主题？   
+怎么备份博客？  
+怎么可视化编辑markdown?
