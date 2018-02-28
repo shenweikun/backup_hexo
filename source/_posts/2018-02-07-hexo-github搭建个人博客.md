@@ -130,10 +130,9 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 3.为了将你本地git仓库与github关联，还需要配置SSH  
 将前面**git安装与配置**步骤生成的**id_rsa.pub**复制到github上。具体步骤如下：  
  a. cat ~/.ssh/id_rsa.pub  
- b.复制id_rsa.pub中的内容
+ b.复制id_rsa.pub中的内容  
  c.黏贴到SSH key中，然后点击 add SSH key
- 
- ![](搭建博客_SSH.jpg)
+   ![](搭建博客_SSH.jpg)
  
 
 * hexo配置和部署  
@@ -156,7 +155,6 @@ hexo d  //部署到博客
  3.打开你的博客yourname.github.io,就可以看到你的博客主页了：
 
 ![](搭建博客_默认主页.png)
- 
  
 ***
 ### 如何发布文章？
