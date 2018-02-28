@@ -132,7 +132,7 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
  a. cat ~/.ssh/id_rsa.pub  
  b.复制id_rsa.pub中的内容  
  c.黏贴到SSH key中，然后点击 add SSH key
-   ![](搭建博客_SSH.jpg)
+   ![](搭建博客_SSH.png)
  
 
 * hexo配置和部署  
