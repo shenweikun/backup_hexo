@@ -190,8 +190,8 @@ hexo d  //部署到博客
 
 ***
 写得比较简单，很多细节都没有提到，要回家过年了，暂时先这样吧，后面有时间再做完善了。
-例如：
-怎么把hexo的相关信息修改为自己？  
-怎么更换主题？   
-怎么备份博客？  
-怎么可视化编辑markdown?
+例如：  
+[怎么把hexo的相关信息修改为自己？](http://shenweikun.top/2018/03/13/How-to-modify-hexo-config/)  
+[怎么更换主题？](http://shenweikun.top/2018/03/14/How-to-change-theme/)   
+[怎么备份博客？](http://shenweikun.top/2018/03/14/How-to-backup-blog/)  
+[怎么可视化编辑markdown?](http://shenweikun.top/2018/03/14/How-to-edit-MarkDown-visually/)
