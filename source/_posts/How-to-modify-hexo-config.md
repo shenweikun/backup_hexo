@@ -4,6 +4,7 @@ date: 2018-03-13 19:20:23
 tags:
 ---
 使用hexo搭建网站，网站的大部分配置信息都可以在_config.yml文件中进行修改。本编主要介绍_config.yml中的内容。
+<!--more-->  
 ***
 ### _config.yml介绍
 1. 网站配置文件在位置： myblog/_config.yml （即创建网站文件夹的根目录下）
@@ -164,4 +165,4 @@ admin:
    secret: hey hexo
    deployCommand: './admin_script/hexo-generate.sh'
 #  expire: 60*1
-``` 
+```
