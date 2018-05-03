@@ -84,9 +84,9 @@ sudo git clone https://github.com/nodejs/node.git
 安装好Node.js之后npm管理工具了，可以使用npm命令来安装Hexo
 * 使用 npm 来便捷安装 Hexo：
 ```
- npm install -g hexo-cli
+ sudo npm install -g hexo-cli
  或者：
- npm install -g hexo
+ sudo npm install -g hexo
 ```
 * 创建本地Hello World
 ```
