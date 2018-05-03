@@ -1,7 +1,10 @@
 title: framework篇之1.CameraService啓動
 categories: Camera系統源碼分析
-date: 2018-05-03 14:57:03
 tags:
+  - MTKCamera
+  - framework
+  - hal
+date: 2018-05-03 14:57:03
 ---
 Service Manager是系统中一个负责管理所有的服务（如相机，音频）的独立的进程，它的handle是0。<!--more--> 它是整个Binder机制的守护进程，用来管理开发者创建的各种Server，并且向Client提供查询Server远程接口的功能。Android Camera 采用C/S架构，client 与server两个独立的线程之间使用Binder通信，因此其必然需要将它的Service注册到ServiceManager里面，以备后续Client引用。  
 *** 
@@ -493,5 +496,9 @@ ImgSensorDrv::impSearchSensor(pfExIdChk pExIdChkCbf)
 }//
 ```  
 
-### 總結
-![](CameraService.jpg) 
+### 總結  
+簡而言之，CameraService啓動過程中做了兩件事，  
+1.framework層，注冊CameraService，提供给client随时使用，爲binder通信做準備。  
+2.hal層，遍歷sensor list，讀取sensor id。  
+最後，附一張時序圖結尾。
+![](CameraService.jpg)
